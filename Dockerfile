@@ -3,6 +3,10 @@ FROM conetix/wordpress-with-wp-cli
 RUN apt-get update
 RUN apt-get install pwgen
 
-ADD ./scripts /scripts
+# Cleanup
+#RUN apt-get clean
 
-CMD ["/bin/bash", "/scripts/setup-wordpress.sh"]
+ADD ./scripts /scripts
+RUN usermod -u 1000 www-data 
+
+#CMD ["/bin/bash", "/scripts/setup-wordpress.sh"]
