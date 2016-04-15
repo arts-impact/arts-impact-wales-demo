@@ -1,0 +1,29 @@
+#  Uses https://github.com/conetix/docker-wordpress-wp-cli
+
+# To-do: 
+# PHP warnings/errors
+# Build from dockerfile rather than pulled image
+# DB pull
+# Remove built-in themes
+# Install plugins
+
+# Set environment variables depending on where this is being spun up
+# Set these locally in ~/.bash_profile or on the server by following this http://stackoverflow.com/questions/1641477/how-to-set-environment-variable-for-everyone-under-my-linux-system
+# export PROPERDOCKER_RESTART=true (prod) || false (local dev)
+# export PROPERDOCKER_DEBUG=false (prod) || true (local dev)
+
+wordpress:
+  build: ./
+  restart: ${PROPERDOCKER_RESTART}
+  container_name: ${PROPERDOCKER_NAME}
+  external_links:
+    # - httpsportal_db_1:mysql
+    - ${PROPERDOCKER_HTTPSPORTAL}:mysql
+  environment:
+    # tell HTTPS-PORTAL to set up "example.com"
+    VIRTUAL_HOST: ${PROPERDOCKER_NAME}.private
+    WORDPRESS_DEBUG: ${PROPERDOCKER_DEBUG}
+  volumes:
+    - ${PWD}/uploads:/var/www/html/wp-content/uploads
+    - ${PWD}/plugins:/var/www/html/wp-content/plugins
+    - ${PWD}/themes:/var/www/html/wp-content/themes
