@@ -1,0 +1,10 @@
+{
+  "plugins" : [
+    {
+      "url" : "https://deliciousbrains.com/dl/wp-migrate-db-pro-latest.zip?licence_key=b3ed61fe-2e1c-498a-807d-3c2407e5ad75&site_url=localhost"
+    },
+    {
+      "url" : "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzMwMTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA3IDE2OjI4OjI0"
+    }
+  ]
+}
