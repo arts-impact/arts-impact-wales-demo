@@ -6,9 +6,11 @@ sed -i -e 's/^exec "$@"/#exec "$@"/g' /entrypoint.sh
 # execute bash script from official wordpress image
 source /entrypoint.sh
 
+echo 'poop'
+
 # replace parent image wp-content with custom wp-content
-# rm -Rf ./wp-content && cp -R /usr/src/<custom wp-content>/* .
-# chown -R www-data:www-data .
+rm -Rf ./wp-content && cp -R /usr/src/wordpress/wp-content .
+chown -R www-data:www-data .
 
 # run additional updates to wp-content and wp-config.php here
 

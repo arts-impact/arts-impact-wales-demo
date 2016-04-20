@@ -15,9 +15,6 @@ RUN chmod +x /bin/wp-cli.phar
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ADD ./scripts /scripts
-ADD proper-config.json /proper-config.json
-RUN usermod -u 1000 www-data 
 
 ### Plugins ###
 WORKDIR /usr/src/wordpress/wp-content/plugins/
@@ -43,6 +40,10 @@ RUN \
     unzip theme.zip; \
     rm theme.zip; \
   done
+
+ADD ./scripts /scripts
+ADD proper-config.json /proper-config.json
+RUN usermod -u 1000 www-data
 
 WORKDIR /var/www/html
 
