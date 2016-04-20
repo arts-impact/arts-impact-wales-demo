@@ -22,9 +22,10 @@ To get started:
 
 ## To-do
 * PHP warnings/errors
-* Build from dockerfile rather than pulled image
+* Migrate DB licence in wp-config
 * DB pull
 * Remove built-in themes
 * Install plugins
 * Think of solution for site URL. Is currently something.private
 * Document how to set up the network
+* Swap out wordpress:latest for wordpress:fpm

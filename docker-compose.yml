@@ -9,7 +9,7 @@ wordpress:
     VIRTUAL_HOST: ${PROPERDOCKER_URL}
     WORDPRESS_DEBUG: ${PROPERDOCKER_DEBUG}
     WORDPRESS_DB_NAME: ${PROPERDOCKER_NAME}
-  volumes:
-    - ${PWD}/uploads:/var/www/html/wp-content/uploads
-    - ${PWD}/plugins:/var/www/html/wp-content/plugins
-    - ${PWD}/themes:/var/www/html/wp-content/themes
+  # volumes:
+  #   - ${PWD}/uploads:/var/www/html/wp-content/uploads
+  #   - ${PWD}/plugins:/var/www/html/wp-content/plugins
+  #   - ${PWD}/themes:/var/www/html/wp-content/themes

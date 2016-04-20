@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# curl -o wp-migrate-dp-pro-latest.zip -SL "https://deliciousbrains.com/dl/wp-migrate-db-pro-latest.zip?licence_key=$WPMDBP_LICENCE&site_url=$PROPERDOCKER_URL"
-
-# chown -R www-data:www-data /var/www/html
 cd /var/www/html
 
 # Check if WP is installed
