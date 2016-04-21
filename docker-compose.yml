@@ -17,7 +17,7 @@ wordpress:
     PROPERDOCKER_ADMIN_EMAIL: ${PROPERDOCKER_ADMIN_EMAIL}
     WPMDBP_LICENCE: ${WPMDBP_LICENCE}
     ACF_LICENCE: ${ACF_LICENCE}
-  # volumes:
-  #   - ${PWD}/uploads:/var/www/html/wp-content/uploads
-  #   - ${PWD}/plugins:/var/www/html/wp-content/plugins
-  #   - ${PWD}/themes:/var/www/html/wp-content/themes
+  volumes:
+    - ${PWD}/uploads:/var/www/html/wp-content/uploads
+    - ${PWD}/plugins:/var/www/html/wp-content/plugins
+    - ${PWD}/themes:/var/www/html/wp-content/themes

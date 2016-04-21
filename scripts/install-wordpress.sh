@@ -4,6 +4,13 @@ cd /var/www/html
 
 # Check if WP is installed
 
+echo "Waiting for WordPress to be copied to volume..."
+
+while [ ! -f index.php ]
+do
+  sleep 1
+done
+
 if ! $(wp core is-installed)
 then
   #Install WordPress
