@@ -24,15 +24,17 @@ export PROPERDOCKER_ADMIN_EMAIL="support@properdesign.rs"
 export WPMDBP_LICENCE="b3ed61fe-2e1c-498a-807d-3c2407e5ad75"
 export ACF_LICENCE="b3JkZXJfaWQ9MzMwMTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA3IDE2OjI4OjI0"
 
-export PROPERDOCKER_ADMIN_PASSWORD=$(pwgen 10 1)
-
 # Check if there's already a container and save its password. Be nice.
-if [ !  $(docker exec -t ${PWD##*/} bash -c 'echo "$PROPERDOCKER_ADMIN_PASSWORD"'  &> /dev/null) ] ; then
+
+PW=$(docker exec -t ${PWD##*/} bash -c 'echo "$PROPERDOCKER_ADMIN_PASSWORD"')
+
+if [ ! $? -eq 0 ] ; then
   export PROPERDOCKER_ADMIN_PASSWORD=$(pwgen 10 1)
 else
-  export PROPERDOCKER_ADMIN_PASSWORD=$(docker exec -t ${PWD##*/} bash -c 'echo "$PROPERDOCKER_ADMIN_PASSWORD"')
+  export PROPERDOCKER_ADMIN_PASSWORD=$PW
 fi
 
+# echo $PROPERDOCKER_ADMIN_PASSWORD
 
 docker-compose build
 docker-compose up -d

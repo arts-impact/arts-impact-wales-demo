@@ -11,6 +11,17 @@ do
   sleep 1
 done
 
+echo "WordPress copied."
+
+echo "Waiting for the database to be available..." #This should probably really check if the DB exists, but this is harder than you might think as we don't have a local mysql client on this contianer (nor do we want to really). Could probably write a bit of PHP to do this
+# while [ ! $(wp db tables) ]
+# do
+#   sleep 1
+# done
+sleep 5
+
+echo "Database (probably) available. We just waited 5 seconds..."
+
 if ! $(wp core is-installed)
 then
   #Install WordPress
