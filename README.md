@@ -18,7 +18,7 @@ To get started:
   * export PROPERDOCKER_RESTART=true (prod) || false (local dev)
   * export PROPERDOCKER_DEBUG=false (prod) || true (local dev)
 * The default WordPress admin username is 'proper'
-* The admin password is generated dynamically and can be accessed by viewing the container logs. This might help: `docker logs docker-wordpress-starter | grep §`
+* The admin password is generated dynamically and can be accessed by viewing the container logs. This might help: `docker exec -t ${PWD##*/} bash -c 'echo "$PROPERDOCKER_ADMIN_PASSWORD"'` (you can run that directly if your directory has the same name as your container, or, replace `${PWD##*/}` with the container you'd like to query)
 
 ## To-do
 * PHP warnings/errors
