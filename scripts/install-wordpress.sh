@@ -32,6 +32,11 @@ then
   echo "Updating plugins..."
   wp plugin update --all
 
+  echo "Activating plugins..."
+  jshon -e plugins -a -e name -u < /proper-config.json | while read name; do \
+    wp plugin activate $name
+  done
+
   echo "WordPress setup!"
 fi
 
