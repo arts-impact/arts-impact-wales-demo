@@ -20,15 +20,22 @@ export PROPERDOCKER_NAME=$(basename $(pwd))
 export PROPERDOCKER_URL="$PROPERDOCKER_NAME".private
 export PROPERDOCKER_DB=$(docker ps --filter ancestor=mariadb --format "{{.Names}}")
 export PROPERDOCKER_ADMIN_USER=proper
-export PROPERDOCKER_ADMIN_PASSWORD=$(pwgen 10 1)
 export PROPERDOCKER_ADMIN_EMAIL="support@properdesign.rs"
 export WPMDBP_LICENCE="b3ed61fe-2e1c-498a-807d-3c2407e5ad75"
 export ACF_LICENCE="b3JkZXJfaWQ9MzMwMTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA3IDE2OjI4OjI0"
+
+export PROPERDOCKER_ADMIN_PASSWORD=$(pwgen 10 1)
+
+# Check if there's already a container and save its password. Be nice.
+if [ !  $(docker exec -t ${PWD##*/} bash -c 'echo "$PROPERDOCKER_ADMIN_PASSWORD"'  &> /dev/null) ] ; then
+  export PROPERDOCKER_ADMIN_PASSWORD=$(pwgen 10 1)
+else
+  export PROPERDOCKER_ADMIN_PASSWORD=$(docker exec -t ${PWD##*/} bash -c 'echo "$PROPERDOCKER_ADMIN_PASSWORD"')
+fi
+
 
 docker-compose build
 docker-compose up -d
 
 # Run the install script inside the container
 docker exec $PROPERDOCKER_NAME /scripts/install-wordpress.sh
-docker exec $PROPERDOCKER_NAME ls -lah /usr/src/wordpress/wp-content/plugins
-docker exec $PROPERDOCKER_NAME ls -lah wp-content/plugins
