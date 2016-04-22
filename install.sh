@@ -25,7 +25,6 @@ export PROPERDOCKER_ADMIN_EMAIL="support@properdesign.rs"
 export WPMDBP_LICENCE="b3ed61fe-2e1c-498a-807d-3c2407e5ad75"
 export ACF_LICENCE="b3JkZXJfaWQ9MzMwMTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA3IDE2OjI4OjI0"
 
-docker-compose down
 docker-compose build
 docker-compose up -d
 
