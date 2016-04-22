@@ -30,4 +30,5 @@ docker-compose up -d
 
 # Run the install script inside the container
 docker exec $PROPERDOCKER_NAME /scripts/install-wordpress.sh
+docker exec $PROPERDOCKER_NAME ls -lah /usr/src/wordpress/wp-content/plugins
 docker exec $PROPERDOCKER_NAME ls -lah wp-content/plugins
