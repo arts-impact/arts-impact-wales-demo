@@ -1,6 +1,9 @@
 {
   "plugins" : [
-
+    {
+      "name" : "wordpress-seo",
+      "url" : "https://downloads.wordpress.org/plugin/wordpress-seo.zip"
+    }
   ],
   "themes" : [
     {

@@ -75,6 +75,8 @@ else
   export PROPERDOCKER_ADMIN_PASSWORD=$PW
 fi
 
+docker pull properdesign/wordpress-starter
+
 docker-compose build
 docker-compose up -d
 
