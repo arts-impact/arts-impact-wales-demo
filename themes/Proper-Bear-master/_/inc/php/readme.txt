@@ -1,1 +1,0 @@
-# Files in this folder will be automatically 'required_once' from functions.php
