@@ -22,8 +22,9 @@ To get started:
 
 ## To-do
 * PHP warnings/errors
-* Migrate DB licence in wp-config
 * DB pull
 * Think of solution for site URL. Is currently something.private
-* Document how to set up the network
+* Document how to set up the network i.e. HTTPS-PORTAL
 * Swap out wordpress:latest for wordpress:fpm
+* Put me on a private registry and test extending me
+* Do some different shizzle depending on where we are. Possibly 'local', 'staging', 'prod'

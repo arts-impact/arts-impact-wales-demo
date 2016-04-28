@@ -40,6 +40,12 @@ then
   # Make Migrate DB happy
   echo 'define( "WPMDB_LICENCE", "b3ed61fe-2e1c-498a-807d-3c2407e5ad75" );' >> wp-config.php
 
+  # Enable debug if we want it
+  if [ ! $PROPERDOCKER_DEBUG = true]; then
+    echo 'define( "WP_DEBUG", true );' >> wp-config.php
+    echo 'define( "WP_DEBUG_LOG", true );' >> wp-config.php
+  fi
+
   echo "WordPress setup!"
 fi
 

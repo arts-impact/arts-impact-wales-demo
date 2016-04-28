@@ -1,28 +1,48 @@
 #!/bin/bash
 
-# if $PROPERDOCKER_DEBUG && ! $PROPERDOCKER_RESTART ; then
-#   echo "Running locally"
-#   # export PROPERDOCKER_NAME=$(basename $(pwd))
-#   # export PROPERDOCKER_URL="$PROPERDOCKER_NAME".private
-#   # export PROPERDOCKER_DB=$(docker ps --filter ancestor=mariadb --format "{{.Names}}")
+# This file mostly sets appropriate environment variables used to spin up the container.
 
-#   # docker-compose down
-#   # docker-compose build
-#   # docker-compose up -d
-# else
-#   echo "It looks like you're trying to run this on the server, or haven't properly set environement variables."
-#   echo "If you're trying to run this locally, add the following to ~/.bash_profile:"
-#   echo "export PROPERDOCKER_RESTART=false"
-#   echo "export PROPERDOCKER_DEBUG=true"
-# fi
+if [ $PROPERDOCKER_STAGE = 'local' ] ; then
+  export PROPERDOCKER_RESTART='false'
+  export PROPERDOCKER_DEBUG='true'
+elif [ $PROPERDOCKER_STAGE = 'staging' ] ; then
+  export PROPERDOCKER_RESTART='true'
+  export PROPERDOCKER_DEBUG='true'
+elif [ $PROPERDOCKER_STAGE = 'prod' ] ; then
+  export PROPERDOCKER_RESTART='false'
+  export PROPERDOCKER_DEBUG='false'
+else
+  echo '$PROPERDOCKER_STAGE not set. Please set to "local", "staging", or "prod"'
+fi
 
 export PROPERDOCKER_NAME=$(basename $(pwd))
-export PROPERDOCKER_URL="$PROPERDOCKER_NAME".private
 export PROPERDOCKER_DB=$(docker ps --filter ancestor=mariadb --format "{{.Names}}")
 export PROPERDOCKER_ADMIN_USER=proper
 export PROPERDOCKER_ADMIN_EMAIL="support@properdesign.rs"
 export WPMDBP_LICENCE="b3ed61fe-2e1c-498a-807d-3c2407e5ad75"
 export ACF_LICENCE="b3JkZXJfaWQ9MzMwMTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA3IDE2OjI4OjI0"
+
+# Try to guess the most useful hostname
+HOST=$(hostname)
+if [[ $HOST == *".local"* ]]
+then
+  TEMP_URL="$PROPERDOCKER_NAME.private"
+else
+  TEMP_URL="$PROPERDOCKER_NAME$HOST"
+fi
+
+echo "Enter the hostname (i.e. full domain name without protocol) for this host. Defaults to $TEMP_URL if no hostname given."
+read USER_URL
+
+if [ -z "$USER_URL" ]; then
+  PROPERDOCKER_URL=$TEMP_URL
+else
+  PROPERDOCKER_URL=$USER_URL
+fi
+
+export PROPERDOCKER_URL="$PROPERDOCKER_URL"
+
+echo "Installing site at $PROPERDOCKER_URL..."
 
 # Check if there's already a container and save its password. Be nice.
 
@@ -33,8 +53,6 @@ if [ ! $? -eq 0 ] ; then
 else
   export PROPERDOCKER_ADMIN_PASSWORD=$PW
 fi
-
-# echo $PROPERDOCKER_ADMIN_PASSWORD
 
 docker-compose build
 docker-compose up -d

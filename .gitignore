@@ -2,3 +2,5 @@ plugins/
 themes/twenty*
 themes/index.php
 uploads/
+node_modules/
+bower_components/

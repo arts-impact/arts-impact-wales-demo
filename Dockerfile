@@ -21,6 +21,8 @@ ADD proper-config.json /proper-config.json
 WORKDIR /usr/src/wordpress/wp-content/plugins/
 RUN rm -Rf *
 
+ENV force_update 100001 # Bump this up if you want to force a re-pull of themes and plugins
+
 # Recursively add plugins from proper-config.json
 RUN \
   jshon -e plugins -a -e url -u < /proper-config.json | while read url; do \
@@ -34,7 +36,6 @@ WORKDIR /usr/src/wordpress/wp-content/themes/
 RUN rm -Rf *
 
 # Recursively add themes from proper-config.json
-ENV force_theme 100001 # Bump this up if you want to force a re-pull of Proper Bear (or any other theme whose URL hasn't changed)
 RUN \
   jshon -e themes -a -e url -u < /proper-config.json | while read url; do \
     curl -Lo theme.zip "$url"; \
