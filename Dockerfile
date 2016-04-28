@@ -15,6 +15,7 @@ RUN chmod +x /bin/wp-cli.phar
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+ADD ./scripts /scripts
 ADD proper-config.json /proper-config.json
 
 ### Plugins ###
@@ -24,26 +25,15 @@ RUN rm -Rf *
 ENV force_update 100001 # Bump this up if you want to force a re-pull of themes and plugins
 
 # Recursively add plugins from proper-config.json
-RUN \
-  jshon -e plugins -a -e url -u < /proper-config.json | while read url; do \
-    curl -Lo plugin.zip "$url"; \
-    unzip plugin.zip; \
-    rm plugin.zip; \
-  done
+RUN /bin/bash -c '/scripts/install-plugins.sh'
 
 ### Themes ###
 WORKDIR /usr/src/wordpress/wp-content/themes/
 RUN rm -Rf *
 
 # Recursively add themes from proper-config.json
-RUN \
-  jshon -e themes -a -e url -u < /proper-config.json | while read url; do \
-    curl -Lo theme.zip "$url"; \
-    unzip theme.zip; \
-    rm theme.zip; \
-  done
+RUN /bin/bash -c '/scripts/install-themes.sh'
 
-ADD ./scripts /scripts
 RUN usermod -u 1000 www-data
 
 WORKDIR /var/www/html
