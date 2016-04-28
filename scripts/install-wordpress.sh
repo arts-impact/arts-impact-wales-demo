@@ -41,7 +41,7 @@ then
   echo 'define( "WPMDB_LICENCE", "b3ed61fe-2e1c-498a-807d-3c2407e5ad75" );' >> wp-config.php
 
   # Enable debug if we want it
-  if [ ! $PROPERDOCKER_DEBUG = true]; then
+  if [ ! $PROPERDOCKER_DEBUG = true ]; then
     echo 'define( "WP_DEBUG", true );' >> wp-config.php
     echo 'define( "WP_DEBUG_LOG", true );' >> wp-config.php
   fi
@@ -49,8 +49,33 @@ then
   echo "WordPress setup!"
 fi
 
-echo "§====================================================="
+# Migrate a DB if we have all the deets
+if [ -n "$PROPERDOCKER_MIGRATEDB_URL" ] && [ -n "$PROPERDOCKER_MIGRATEDB_KEY" ]; then
+  echo "Migrating database with media files from $PROPERDOCKER_MIGRATEDB_URL..."
+  # Try to do a migrate with media files. This might fail
+  wp migratedb pull "$PROPERDOCKER_MIGRATEDB_URL" "$PROPERDOCKER_MIGRATEDB_KEY" --preserve-active-plugins --media=compare-and-remove
+
+  if [ ! $? -eq 0 ] ; then
+    echo "Migrating database with media files failed. Trying migrating database without media files..."
+    wp migratedb pull "$PROPERDOCKER_MIGRATEDB_URL" "$PROPERDOCKER_MIGRATEDB_KEY" --preserve-active-plugins
+    if [ $? -eq 0 ] ; then
+      echo "Database migration successful."
+    else
+      echo "Database migration failed. Perhaps the Migrate DB versions are different ."
+    fi
+  fi
+fi
+
+echo "§============================================================"
 echo "§  Site URL:               $VIRTUAL_HOST"
-echo "§  Admin username:         $PROPERDOCKER_ADMIN_USER"
-echo "§  Admin password:         $PROPERDOCKER_ADMIN_PASSWORD"
-echo "§====================================================="
+
+if [ -z "$PROPERDOCKER_MIGRATEDB_URL" ]; then
+  # We set up a new database, so these details are probably right
+  echo "§  Admin username:         $PROPERDOCKER_ADMIN_USER"
+  echo "§  Admin password:         $PROPERDOCKER_ADMIN_PASSWORD"
+else
+  echo "§  Admin username:         From the database you pulled..."
+  echo "§  Admin password:         From the database you pulled..."
+fi
+
+echo "§============================================================"

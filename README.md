@@ -5,12 +5,14 @@ Proper Design's starter docker-compose image. Spins up a
 ##Dependencies
 * Docker
 * Docker Compose
+* HTTPS-PORTAL
 * DNSMaq (for local development)
 
 ##Getting started
 
 To get started:
 
+* Make sure you've got Docker Toolbox (or Docker for Mac/Windows once that's released) installed
 * Spin up an HTTPS-PORTAL network (add instructions and repo on how to do this)
 * dnsmasq locally, resolving IP on the server
 * Set environment variables depending on where this is being spun up
@@ -20,11 +22,8 @@ To get started:
 * The default WordPress admin username is 'proper'
 * The admin password is generated dynamically and can be accessed by viewing the container logs. This might help: `docker exec -t ${PWD##*/} bash -c 'echo "$PROPERDOCKER_ADMIN_PASSWORD"'` (you can run that directly if your directory has the same name as your container, or, replace `${PWD##*/}` with the container you'd like to query)
 
+## Migrating a database
+
 ## To-do
-* PHP warnings/errors
-* DB pull
-* Think of solution for site URL. Is currently something.private
-* Document how to set up the network i.e. HTTPS-PORTAL
 * Swap out wordpress:latest for wordpress:fpm
 * Put me on a private registry and test extending me
-* Do some different shizzle depending on where we are. Possibly 'local', 'staging', 'prod'
