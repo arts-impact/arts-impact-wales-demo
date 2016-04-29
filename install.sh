@@ -28,7 +28,7 @@ if [[ $HOST == *".local"* ]]
 then
   TEMP_URL="$PROPERDOCKER_NAME.private"
 else
-  TEMP_URL="$PROPERDOCKER_NAME$HOST"
+  TEMP_URL="$PROPERDOCKER_NAME.$HOST"
 fi
 
 echo "Enter the hostname (i.e. full domain name without protocol) for this host. Defaults to $TEMP_URL if no hostname given."
@@ -51,15 +51,13 @@ if [ "$MIGRATE" == n ]; then
   # The user didn't want to migrate anything
   echo "Proceeding without migrate..."
 elif [ "$MIGRATE" == Y ] || [ "$MIGRATE" == y ] || [ -z "$MIGRATE" ]; then
-  export PROPERDOCKER_MIGRATEDB_URL="https://groundwork.staging.properdesign.co.uk"
-  export PROPERDOCKER_MIGRATEDB_KEY="/Ck/pkh3PxgYrAIypPedoL4yX+npbf5AEjkjeda8"
-  # echo "Enter the remote host URL that you want to pull from..."
-  # read PROPERDOCKER_MIGRATEDB_URL
-  # export PROPERDOCKER_MIGRATEDB_URL="$PROPERDOCKER_MIGRATEDB_URL"
+  echo "Enter the remote host URL that you want to pull from..."
+  read PROPERDOCKER_MIGRATEDB_URL
+  export PROPERDOCKER_MIGRATEDB_URL="$PROPERDOCKER_MIGRATEDB_URL"
 
-  # echo "Enter the remote host key..."
-  # read PROPERDOCKER_MIGRATEDB_KEY
-  # export PROPERDOCKER_MIGRATEDB_KEY="$PROPERDOCKER_MIGRATEDB_KEY"
+  echo "Enter the remote host key..."
+  read PROPERDOCKER_MIGRATEDB_KEY
+  export PROPERDOCKER_MIGRATEDB_KEY="$PROPERDOCKER_MIGRATEDB_KEY"
 fi
 
 echo "Installing site at $PROPERDOCKER_URL..."
