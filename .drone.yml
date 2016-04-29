@@ -1,0 +1,25 @@
+deploy:
+  rsync:
+    user: root
+    host: staging.properdesign.rs
+    port: 22
+    source: .
+    target: /www
+    delete: true
+    when:
+      branch: develop
+    recursive: true
+    include:
+      - "themes/*"
+      - "docker-compose.yml"
+      - "Dockerfile"
+      - "install.sh"
+      - "proper-config.json"
+    commands:
+      # - if [[ -d "/www/fatherhood/themes" ]] && [[ ! -L "/www/fatherhood/themes/fatherhood" ]]; then ln -s /apps/fatherhood/themes/fatherhood /www/fatherhood/themes/fatherhood; fi
+      # - if [ -d "/www/fatherhood/themes" ]; then cd /apps/fatherhood ; docker-compose up -d ; fi
+notify:
+  slack:
+    webhook_url: https://hooks.slack.com/services/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
+    channel: tech
+    username: drone
