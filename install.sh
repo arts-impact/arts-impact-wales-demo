@@ -68,7 +68,7 @@ PW=$(docker exec -t ${PWD##*/} bash -c 'echo "$PROPERDOCKER_ADMIN_PASSWORD"')
 
 # The last command tries to get the password out of a running container. If that doesn't exist (i.e. the command failed), generate one
 if [ ! $? -eq 0 ] ; then
-  export PROPERDOCKER_ADMIN_PASSWORD=$(pwgen 10 1)
+  export PROPERDOCKER_ADMIN_PASSWORD=$(docker run sofianinho/pwgen-alpine)
 else
   export PROPERDOCKER_ADMIN_PASSWORD=$PW
 fi
