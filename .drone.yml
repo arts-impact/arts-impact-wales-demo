@@ -21,5 +21,9 @@ deploy:
 notify:
   slack:
     webhook_url: https://hooks.slack.com/services/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
-    channel: tech
+    channel: build
     username: drone
+    when:
+      success: false
+      failure: true
+      change: true
