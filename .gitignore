@@ -4,4 +4,6 @@ themes/index.php
 uploads/
 node_modules/
 bower_components/
+.sass-cache/
+.DS_Store
 Proper-Bear*
