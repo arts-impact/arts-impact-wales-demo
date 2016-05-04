@@ -70,7 +70,7 @@ fi
 echo "§============================================================"
 echo "§  Site URL:               $VIRTUAL_HOST"
 
-if [ -z "$PROPERDOCKER_MIGRATEDB_URL" || "$MIGRATEDB_FAILED" = true ]; then
+if [ -z "$PROPERDOCKER_MIGRATEDB_URL" ] || [ -n "$MIGRATEDB_FAILED" ] ; then
   # We set up a new database, so these details are probably right
   echo "§  Admin username:         $PROPERDOCKER_ADMIN_USER"
   echo "§  Admin password:         $PROPERDOCKER_ADMIN_PASSWORD"
