@@ -30,7 +30,7 @@ export ACF_LICENCE="b3JkZXJfaWQ9MzMwMTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA3
 ####################
 
 ## The user might want to start again. This is mostly for testing purposes. Bin the DB
-if [ $1 == 'fresh' ]; then
+if [ "$1" == 'fresh' ]; then
   docker exec -t $PROPERDOCKER_DB /bin/bash -c "mysql --user=root --password=\$MYSQL_ROOT_PASSWORD --execute=\"DROP DATABASE IF EXISTS \\\`$PROPERDOCKER_NAME\\\`;\""
   docker-compose down
 fi
