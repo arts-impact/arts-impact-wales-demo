@@ -62,6 +62,7 @@ if [ -n "$PROPERDOCKER_MIGRATEDB_URL" ] && [ -n "$PROPERDOCKER_MIGRATEDB_KEY" ];
       echo "Database migration successful."
     else
       echo "Database migration failed. Perhaps the Migrate DB versions are different ."
+      MIGRATEDB_FAILED=true
     fi
   fi
 fi
@@ -69,7 +70,7 @@ fi
 echo "§============================================================"
 echo "§  Site URL:               $VIRTUAL_HOST"
 
-if [ -z "$PROPERDOCKER_MIGRATEDB_URL" ]; then
+if [ -z "$PROPERDOCKER_MIGRATEDB_URL" || "$MIGRATEDB_FAILED" = true ]; then
   # We set up a new database, so these details are probably right
   echo "§  Admin username:         $PROPERDOCKER_ADMIN_USER"
   echo "§  Admin password:         $PROPERDOCKER_ADMIN_PASSWORD"
