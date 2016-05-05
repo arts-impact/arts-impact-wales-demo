@@ -108,3 +108,7 @@ docker-compose up -d
 
 # Run the install script inside the container
 docker exec $PROPERDOCKER_NAME /scripts/install-wordpress.sh
+
+if [ "$PROPERDOCKER_STAGE" != "local" ] ; then
+  chown -R drone:www-data .
+fi
