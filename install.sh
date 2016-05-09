@@ -49,7 +49,12 @@ else
     HOST=$(hostname)
     if [[ $HOST == *".local"* ]]
     then
-      TEMP_URL="$PROPERDOCKER_NAME.private"
+      # The user is running this locally. Work out whether they're using Docker Toolbox or not and assign the TLD appropriately
+      if [ -z $DOCKER_MACHINE_NAME ]; then
+        TEMP_URL="$PROPERDOCKER_NAME.localhost"
+      else
+        TEMP_URL="$PROPERDOCKER_NAME.private"
+      fi
     else
       TEMP_URL="$PROPERDOCKER_NAME.$HOST"
     fi
@@ -87,7 +92,6 @@ else
   fi
 
   echo "Installing site at $PROPERDOCKER_URL..."
-
 fi
 
 # Check if there's already a container and save its password. Be nice.

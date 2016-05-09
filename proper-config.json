@@ -1,27 +1,8 @@
 {
   "plugins" : [
-    {
-      "name" : "wp-migrate-db-pro",
-      "url" : "https://deliciousbrains.com/dl/wp-migrate-db-pro-latest.zip?licence_key=b3ed61fe-2e1c-498a-807d-3c2407e5ad75&site_url=localhost"
-    },
-    {
-      "name" : "wp-migrate-db-pro-media-files",
-      "url" : "https://deliciousbrains.com/dl/wp-migrate-db-pro-media-files-latest.zip?licence_key=b3ed61fe-2e1c-498a-807d-3c2407e5ad75&site_url=localhost"
-    },
-    {
-      "name" : "wp-migrate-db-pro-cli",
-      "url" : "https://deliciousbrains.com/dl/wp-migrate-db-pro-cli-latest.zip?licence_key=b3ed61fe-2e1c-498a-807d-3c2407e5ad75&site_url=localhost"
-    },
-    {
-      "name" : "advanced-custom-fields-pro",
-      "url" : "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzMwMTJ8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA3IDE2OjI4OjI0"
-    }
+  
   ],
   "themes" : [
-    {
-      "name" : "twentysixteen",
-      "url" : "https://downloads.wordpress.org/theme/twentysixteen.1.2.zip"
-    },
     {
       "name" : "proper-bear",
       "url" : "https://github.com/Bones5/Proper-Bear/archive/master.zip"
