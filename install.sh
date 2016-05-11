@@ -4,13 +4,10 @@
 
 
 if [ $PROPERDOCKER_STAGE = 'local' ] ; then
-  export PROPERDOCKER_RESTART='true'
   export PROPERDOCKER_DEBUG='true'
 elif [ $PROPERDOCKER_STAGE = 'staging' ] ; then
-  export PROPERDOCKER_RESTART='true'
   export PROPERDOCKER_DEBUG='true'
 elif [ $PROPERDOCKER_STAGE = 'prod' ] ; then
-  export PROPERDOCKER_RESTART='false'
   export PROPERDOCKER_DEBUG='false'
 else
   echo '$PROPERDOCKER_STAGE not set. Please set to "local", "staging", or "prod"'

@@ -1,6 +1,6 @@
 wordpress:
   build: ./
-  restart: ${PROPERDOCKER_RESTART}
+  restart: always
   container_name: ${PROPERDOCKER_NAME}
   external_links:
     - ${PROPERDOCKER_DB}:mysql
