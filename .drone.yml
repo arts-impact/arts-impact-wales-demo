@@ -1,3 +1,8 @@
+build:
+  image: ubuntu
+  commands:
+    - $(! grep --exclude-dir=node_modules --include=\*.php -rlnw '.' -e 'bum')
+    - $(! grep --exclude-dir=node_modules --include=\*.js -rlnw '.' -e "bum")
 deploy:
   rsync:
     user: drone
