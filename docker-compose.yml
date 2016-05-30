@@ -24,3 +24,6 @@ wordpress:
     - ${PWD}/uploads:/var/www/html/wp-content/uploads
     - ${PWD}/plugins:/var/www/html/wp-content/plugins
     - ${PWD}/themes:/var/www/html/wp-content/themes
+  log_opt:
+    - max-size: 1m
+    - max-file: 10
