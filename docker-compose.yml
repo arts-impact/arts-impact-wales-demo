@@ -24,6 +24,7 @@ wordpress:
     - ${PWD}/uploads:/var/www/html/wp-content/uploads
     - ${PWD}/plugins:/var/www/html/wp-content/plugins
     - ${PWD}/themes:/var/www/html/wp-content/themes
+  log_driver: "json-file"
   log_opt:
-    - max-size: 1m
-    - max-file: 10
+      max-size: "10m"
+      max-file: "10"
