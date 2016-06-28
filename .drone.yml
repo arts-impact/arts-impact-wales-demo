@@ -6,6 +6,7 @@ build:
       - $(! grep --exclude-dir=node_modules --include=\*.js -rlnw '.' -e "bum")
   frontend:
     image: properdesign/proper-build
+    pull: true
     commands:
       - DRONE_ROOT=$(pwd)
       - cp -r * /source
