@@ -1,5 +1,21 @@
 {
   "plugins" : [
+    {
+      "name" : "wordpress-seo",
+      "url" : "https://downloads.wordpress.org/plugin/wordpress-seo.zip"
+    },
+    {
+      "name" : "ajax-thumbnail-rebuild",
+      "url" : "https://downloads.wordpress.org/plugin/ajax-thumbnail-rebuild.zip"
+    },
+    {
+      "name" : "disqus-comment-system",
+      "url" : "https://downloads.wordpress.org/plugin/disqus-comment-system.zip"
+    },
+    {
+      "name" : "manual-image-crop",
+      "url" : "https://downloads.wordpress.org/plugin/manual-image-crop.zip"
+    },
 
   ],
   "themes" : [
