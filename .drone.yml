@@ -17,7 +17,7 @@ build:
       - cp -r /source/* $DRONE_ROOT
 deploy:
   rsync:
-    user: drone
+    user: root
     host: staging.properdesign.rs
     port: 22
     source: .
