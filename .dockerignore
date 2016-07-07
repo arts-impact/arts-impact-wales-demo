@@ -1,0 +1,6 @@
+plugins
+uploads
+themes
+.git
+.sass-cache
+.DS_Store
