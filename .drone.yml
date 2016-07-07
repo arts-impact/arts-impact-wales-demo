@@ -22,14 +22,16 @@ deploy:
     port: 22
     source: .
     target: /www
-    delete: false
+    delete: true
     when:
       branch: develop
     recursive: true
     exclude:
-      - ".git/"
-      - ".gitignore"
-      - ".drone.yml"
+      - .git/
+      - .gitignore
+      - .drone.yml
+      - plugins
+      - uploads
     commands:
       # - 
 notify:
