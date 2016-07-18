@@ -1,0 +1,72 @@
+{
+    "key": "group_54a3fc27dc8ef",
+    "title": "Team Fields",
+    "fields": [
+        {
+            "key": "field_54a3fc36a8135",
+            "label": "Twitter",
+            "name": "twitter",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Your Twitter handle",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54a3fcc51608b",
+            "label": "GitHub",
+            "name": "github",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Your GitHub username",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54a3fce51608c",
+            "label": "CodePen",
+            "name": "codepen",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

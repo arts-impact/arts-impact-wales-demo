@@ -1,0 +1,35 @@
+// Global breakpoints
+
+@mixin media($size){
+
+  @if $size == momma {
+    @media screen and (min-width:42em){ @content; }
+  }
+  @else if $size == poppa {
+    @media screen and (min-width:68em){ @content; }
+  }
+
+}
+
+body:before, body:after{
+	display:block;
+	content:"";
+	height:0.25em;
+	background-image:$design-gradient;
+}
+
+h1, h2, h3{
+	font-family:$font-headline;
+}
+
+body{
+	font-family: $font-body;
+	color:$color-text;
+	font-size:1.1em;
+}
+a{
+	color:$color-blue;
+	&:visited{
+		color:$color-purple;
+	}
+}

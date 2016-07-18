@@ -1,0 +1,12 @@
+// Global breakpoints
+
+@mixin media($size){
+
+  @if $size == momma {
+    @media screen and ( min-width:42em ){ @content; }
+  }
+  @else if $size == poppa {
+    @media screen and ( min-width: $width-site-max ){ @content; }
+  }
+
+}

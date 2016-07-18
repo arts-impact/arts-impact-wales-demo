@@ -1,0 +1,20 @@
+table{
+	width:100%;
+	table-layout:fixed;
+	input:disabled{
+		border:none;
+		background:none;
+	}
+}
+tbody tr{
+	border-top:solid thin;
+	&:nth-child(2n -1){
+		background-color:$color-body;
+	}
+}
+th,td{
+	padding:0.5em;
+}
+th{
+	text-align:left;
+}

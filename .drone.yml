@@ -7,7 +7,7 @@ deploy:
     target: /var/www/properdesign.rs/web/wp-content/themes/properdesign/
     delete: true
     when:
-      branch: develop
+      branch: master
     recursive: true
     exclude:
       - .git/

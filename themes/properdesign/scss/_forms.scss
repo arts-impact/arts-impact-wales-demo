@@ -1,0 +1,26 @@
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=password],
+textarea{
+	color:$color-text;
+	border:none;
+	margin:0 0 0.5em 0;
+	width:100%;
+}
+
+input{
+	padding:0.25rem;
+}
+label{
+	padding:0.25em 0;
+	display:block;
+
+}
+.input-addon-wrapper{
+	display:flex;
+	flex:1;
+}
+.input-addon{
+	padding:0.25rem;
+}
