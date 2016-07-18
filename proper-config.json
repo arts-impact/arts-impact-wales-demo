@@ -1,11 +1,48 @@
 {
-  "plugins" : [
-  
-  ],
-  "themes" : [
+  "plugins": [],
+  "themes": [
     {
-      "name" : "proper-bear",
-      "url" : "https://github.com/Bones5/Proper-Bear/archive/master.zip"
+      "name": "proper-bear",
+      "url": "https://github.com/Bones5/Proper-Bear/archive/master.zip"
     }
-  ]
+  ],
+  "migrateDbServers": [
+    {
+      "url": "https://properdesign.rs",
+      "key": "SE9JsMMUsou8nVKv5i99fLZb3iOIImhoxLV+CRKo"
+    }
+  ],
+  "build": {
+    "source": "themes/properdesign",
+    "bower": {
+      "installDest": "bower_components",
+      "cssDestName": "thirdparty.css",
+      "cssDestDir": "css",
+      "cssMinDestName": "thirdparty.min.css",
+      "cssMinDestDir": "css",
+      "jsDestName": "thirdparty.js",
+      "jsDestDir": "js",
+      "jsMinDestName": "thirdparty.min.js",
+      "jsMinDestDir": "js"
+    },
+    "svg": {
+      "srcDir": "svg/src",
+      "destName": "symbols.svg",
+      "destDir": "svg",
+      "svgDocumentSettings": {
+        "xmlDeclaration": true,
+        "namespaceIDs": false,
+        "doctypeDeclaration": true
+      }
+    },
+    "js": {
+      "srcDir": "js/src",
+      "destName": "themefunctions.js",
+      "destDir": "js"
+    },
+    "sass": {
+      "srcDir": "scss",
+      "destDir": ""
+    }
+  }
 }
