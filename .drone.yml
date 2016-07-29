@@ -1,13 +1,13 @@
 deploy:
   rsync:
     user: root
-    host: properdesign.rs
+    host: staging.properdesign.rs
     port: 22
-    source: /drone/src/bitbucket.org/proper-design/properdesign/themes/properdesign/*
-    target: /var/www/properdesign.rs/web/wp-content/themes/properdesign/
+    source: .
+    target: /www
     delete: true
     when:
-      branch: master
+      branch: develop
     recursive: true
     exclude:
       - .git/
@@ -16,7 +16,8 @@ deploy:
       - plugins
       - uploads
     commands:
-      # - 
+      # - cd /www/newmet
+      # - proper-site-install
 notify:
   slack:
     webhook_url: https://hooks.slack.com/services/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
