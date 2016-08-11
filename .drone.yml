@@ -1,3 +1,20 @@
+build:
+  lint-bum:
+    image: ubuntu
+    commands:
+      - $(! grep --exclude-dir=node_modules --include=\*.php -rlnw '.' -e 'bum')
+      - $(! grep --exclude-dir=node_modules --include=\*.js -rlnw '.' -e "bum")
+  frontend:
+    image: properdesign/proper-build
+    pull: true
+    commands:
+      - DRONE_ROOT=$(pwd)
+      - cp -r * /source
+      - cd /build
+      - gulp sass
+      - gulp scripts
+      - gulp svg
+      - cp -r /source/* $DRONE_ROOT
 deploy:
   rsync:
     user: root
