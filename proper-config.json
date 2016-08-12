@@ -1,5 +1,6 @@
 {
   "plugins": [],
+  "dev-plugins" : [],
   "themes": [
     {
       "name": "proper-bear",
