@@ -20,3 +20,9 @@ style.css
 sprite.symbol.svg
 themefunctions.min*
 symbols.svg
+cached_uglify
+hotupdate.js
+hotupdate.json
+bundle.js
+bundle.js.map
+hotupdate.js.map

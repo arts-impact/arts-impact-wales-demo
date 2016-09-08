@@ -1,0 +1,17 @@
+{
+  "name": "proper-wordpress-bare",
+  "version": "0.0.1",
+  "description": "Proper Design's bare-bones WordPress-in-Docker starter",
+  "main": "''",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/proper-design/wordpress-bare"
+  },
+  "author": "Proper Design",
+  "license": "MIT",
+  "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  }
+}
