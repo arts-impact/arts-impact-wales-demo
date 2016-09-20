@@ -10,7 +10,7 @@
   "migrateDbServers": [],
   "build": {
     "source": "themes/Proper-Bear-master",
-    "buildTool" : "webpack",
+    "buildTool": "webpack",
     "bower": {
       "installDest": "bower_components",
       "cssDestName": "thirdparty.css",
