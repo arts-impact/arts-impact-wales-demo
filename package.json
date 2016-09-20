@@ -11,6 +11,10 @@
   "license": "MIT",
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
+    "jquery" : "latest",
+    "fitvids": "latest",
+    "squishMenu" : "latest",
+    "npm-modernizr" : "latest",
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
   }
