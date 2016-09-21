@@ -5,15 +5,16 @@ build:
       - $(! grep --exclude-dir=node_modules --include=\*.php -rlnw '.' -e 'bum')
       - $(! grep --exclude-dir=node_modules --include=\*.js -rlnw '.' -e "bum")
   frontend:
-    image: properdesign/proper-build
+    image: properdesign/proper-build:webpack
     pull: true
     commands:
       - DRONE_ROOT=$(pwd)
       - cp -r * /source
+      - cd /source && npm install
       - cd /build
-      - gulp sass
-      - gulp scripts
-      - gulp svg
+      - node /js/setEnvVars.js
+      - . /build/envvars.sh
+      - npm run build
       - cp -r /source/* $DRONE_ROOT
 deploy:
   rsync:
