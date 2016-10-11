@@ -1,4 +1,4 @@
-FROM properdesign/wordpress-starter
+FROM properdesign/wordpress-starter:php7
 
 ENV force_update 100002 # Bump this up if you want to force a re-pull of themes and plugins
 
