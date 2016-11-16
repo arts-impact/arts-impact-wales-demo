@@ -1,0 +1,27 @@
+.sg-color-1 {
+  background-color: red;
+}
+
+.sg-color-2 {
+  background-color: blue;
+}
+
+.sg-color-3 {
+  background-color: green;
+}
+
+.sg-color-4 {
+  background-color: yellow;
+}
+
+.sg-color-5 {
+  background-color: orange;
+}
+
+body {
+  background-color: #FCFCFC;
+}
+
+h1 {
+  color: red;
+}

@@ -1,0 +1,19 @@
+.input-wrapper {
+	margin-bottom: 1em;
+}
+
+.input-list {
+	@include reset-list;
+}
+
+label {
+	display: block;
+}
+
+label[for="checkbox"], [for="radio"] {
+	display: inline-block;
+}
+
+input[type="checkbox"], [type="radio"] {
+	display: inline-block;
+}

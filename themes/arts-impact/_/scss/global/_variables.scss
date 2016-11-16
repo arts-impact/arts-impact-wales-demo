@@ -1,0 +1,15 @@
+// Colors
+$color-red:		#bf1b2c;
+$color-orange:	#f14624;
+$color-yellow:	#f2ef1d;
+$color-green:	#8BC53F;
+$color-blue:	#1B75BB;
+$color-purple:	#652D90;
+
+$color-text:	#252525;
+$color-text-light: adjust-lightness($color-text, 40);
+$color-body:	#F0EFEB;
+
+// Fonts
+/* A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack */
+$font-body: Helmet, Freesans, sans-serif;

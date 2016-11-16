@@ -1,0 +1,61 @@
+// Adjust fixed position when the admin bar is displayed
+@mixin wp-admin-bump{
+  .admin-bar & {
+      margin-top: 46px;
+
+      @media screen and (min-width: 782px){
+        margin-top: 32px;
+      }
+    }
+}
+
+// WP specific image positioning and sizing
+
+img[class*='wp-image-'], .wp-caption{
+	display:block;
+	max-width:100%;
+	height:auto;
+}
+
+.alignleft{
+	float:left;
+  margin:0 1em 1em 0;
+}
+
+.alignright{
+	float:right;
+  margin:0 0 1em 1em;
+}
+
+// Wordpress galleries
+
+.gallery {
+  margin:1em -0.5em;
+}
+
+.gallery-item {
+  padding:0.5em;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+  vertical-align:top;
+}
+
+.gallery-item{
+  img {
+    display:block;
+    width: 100%;
+    height: auto;
+  }
+  figcaption{
+  margin-top:0.5em;
+  }
+}
+
+
+
+@for $i from 1 through 9 {
+  .gallery-columns-#{$i} .gallery-item{
+    width: percentage(1/$i);
+  }
+}

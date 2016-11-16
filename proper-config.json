@@ -7,5 +7,33 @@
       "url": "https://github.com/Bones5/Proper-Bear/archive/master.zip"
     }
   ],
-  "migrateDbServers": []
+  "migrateDbServers": [],
+  "build": {
+    "source": "themes/arts-impact",
+    "bower": {
+      "installDest": "bower_components",
+      "cssDestName": "thirdparty.css",
+      "cssDestDir": "_/css",
+      "cssMinDestName": "thirdparty.min.css",
+      "cssMinDestDir": "_/css",
+      "jsDestName": "thirdparty.js",
+      "jsDestDir": "_/js",
+      "jsMinDestName": "thirdparty.min.js",
+      "jsMinDestDir": "_/js"
+    },
+    "svg": {
+      "srcDir": "_/svg/src",
+      "destName": "symbols.svg",
+      "destDir": "_/svg"
+    },
+    "js": {
+      "srcDir": "_/js/src",
+      "destName": "themefunctions.js",
+      "destDir": "_/js"
+    },
+    "sass": {
+      "srcDir": "_/scss",
+      "destDir": ""
+    }
+  }
 }

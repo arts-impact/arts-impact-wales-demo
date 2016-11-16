@@ -1,0 +1,17 @@
+.tablist{
+  list-style: none;
+  padding: 0;
+}
+
+.tablist .tab{
+  cursor:pointer;
+  display:inline-block;
+}
+
+.tablist li[aria-selected='true'] {
+}
+
+[aria-hidden='true'],
+.hidden {
+display: none;
+}

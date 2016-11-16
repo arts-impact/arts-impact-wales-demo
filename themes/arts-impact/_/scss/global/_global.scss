@@ -1,0 +1,36 @@
+// better box-sizing fix as per http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// Global breakpoints
+
+@mixin media($size){
+
+  @if $size == momma {
+    @media screen and (min-width:42em){ @content; }
+  }
+  @else if $size == poppa {
+    @media screen and (min-width:68em){ @content; }
+  }
+
+}
+
+// Clearfix
+.group{
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//Reset lists
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

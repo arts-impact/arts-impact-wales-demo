@@ -1,0 +1,119 @@
+//Variables
+@import url(https://fonts.googleapis.com/css?family=Roboto+:400,700,600,300,100);
+@import url(https://fonts.googleapis.com/css?family=Titillium+:400,700,600,300,100);
+
+
+$color-blue-dark: #003b6d;
+$color-blue-med: #006594;
+$color-blue-light: #3384a9;
+$color-orange-med: #f16628;
+$color-orange-light: #ffad89;
+$color-grey: #424242;
+$color-grey-light: #FCFCFC;
+$color-red: #A30C00;
+$color-green: #448300;
+
+$font-body: "Roboto", sans-serif;
+$font-alt: "Titillium", sans-serif;
+
+//Colours
+
+.sg-color-1 { background-color: $color-blue-dark; }
+.sg-color-2 { background-color: $color-blue-med; }
+.sg-color-3 { background-color: $color-blue-light; }
+.sg-color-4 { background-color: $color-orange-med; }
+.sg-color-5 { background-color: $color-orange-light; }
+.sg-color-6 { background-color: $color-grey; }
+.sg-color-7 { background-color: $color-red; }
+.sg-color-8 { background-color: $color-green; }
+
+//Global
+
+body {
+  background-color: $color-grey-light;
+  font-family: $font-body;
+  font-weight: 100;
+  font-size: 1.1em;
+}
+
+
+//Links
+
+a {
+  color: $color-blue-med;
+}
+
+//Buttons
+
+button {
+  background-color: $color-orange-med;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: 0;
+  padding: 1em 2em;
+}
+
+//Typography
+
+.site-content-wrapper {
+  line-height: 1.8;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 3em;
+}
+
+blockquote {
+  position: relative;
+  background-color: shade($color-grey-light, 1);
+  color: $color-grey;
+  border: 1px solid shade($color-grey-light, 10);
+  padding: 1em 2em;
+  margin: 0;
+  &:before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    display: block;
+    height: 0;
+    width: 0;
+    border-bottom: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-top: 1em solid $color-orange-med;
+    border-left: 1em solid $color-orange-med;
+  }
+}
+
+//Forms
+
+input {
+  padding: 1em;
+  outline: 0;
+  border-radius: 2px;
+}
+
+//Tables
+
+table {
+  width: 100%;
+  border: 1px solid;
+  background-color: white;
+}
+
+thead, th {
+  background-color: $color-red;
+  color: white;
+}
+
+th, td {
+  padding: 1em;
+}
+
+table td:first-child{
+  color: black;
+  font-weight: 600;
+}

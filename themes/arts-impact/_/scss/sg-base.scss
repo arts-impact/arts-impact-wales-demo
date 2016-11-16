@@ -1,0 +1,144 @@
+@import "global/normalize";
+@import "global/global";
+@import "global/tabs";
+@import "navigation/squish-menu";
+
+
+$sg-ground:#222;
+$sg-grey:#eee;
+
+.sg-button{
+  padding:0.5em 0.75em;
+  color:white;
+  background-color:$sg-ground;
+  border:solid thin $sg-ground;
+}
+
+//Hide wordpress template header
+
+.site-header-wrapper, .site-nav-wrapper, .site-footer-wrapper {
+  display: none;
+}
+
+.sg-nav-item{
+  @extend .sg-button;
+  text-decoration:none;
+}
+
+.sg-nav-item.sg-current{
+  color:$sg-ground;
+  background-color:white;
+}
+
+.site-content-wrapper {
+  padding: 2em;
+}
+
+[role="tablist"]{
+  border-bottom:solid thin;
+}
+
+[role="tab"]{
+  @extend .sg-button;
+  border-bottom:none;
+  transform:translateY(1px);
+}
+
+[aria-selected="true"]{
+  background-color:white;
+  color:$sg-ground;
+}
+
+section{
+  padding:2.5em 0;
+  + section{
+    border-top:1px solid #EEE;
+  }
+}
+
+.sg-section-header {
+  margin: 0 0 1em 0;
+  font-weight: 100;
+  font-size: 1em;
+  color: grey;
+}
+
+.sg-logo-image{
+  width:200px;
+  height:auto;
+}
+
+.sg-accent{
+  width:180px;
+  height:auto;
+  vertical-align:top;
+}
+
+//Prototype
+
+.prototype-device {
+  margin: 0 auto;
+  &:before {
+    display: block;
+    content: "";
+    height: 3em;
+    width: 100%;
+    background-color: black;
+    border-radius: 2em 2em 0 0;
+  }
+
+  &:after {
+    display: block;
+    content: "";
+    height: 3em;
+    width: 100%;
+    background-color: black;
+    border-radius: 0 0 2em 2em;
+  }
+}
+
+.prototype-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-left: .5em solid;
+  border-right: .5em solid;
+}
+
+//Prototype Devices
+
+$mobile-width: 1334px;
+$tablet-desktop-width: 2048px;
+
+.mobile-device {
+  max-width: $mobile-width / 4;
+}
+
+.tablet-desktop-device {
+  max-width: $tablet-desktop-width / 2;
+}
+
+
+//Colors
+
+.sg-color{
+  width:5em;
+  height:5em;
+  display: inline-block;
+  border:solid thick white;
+}
+
+//Adjectives
+
+.sg-word{
+  display:inline-block;
+  background:$sg-grey;
+  padding:0.5em;
+}
+
+//Imagery
+.sg-image{
+  width:100%;
+  max-width: 500px;
+  height:auto;
+}
