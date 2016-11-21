@@ -1,7 +1,6 @@
 <?php
 
 // Custom Post Types
-
 function aiw_register_organisations() {
 
   $labels = array(
@@ -56,6 +55,7 @@ function aiw_register_organisations() {
 
 add_action( 'init', 'aiw_register_organisations', 0 );
 
+
 // Register Custom Post Type
 function aiw_register_projects() {
 
@@ -80,7 +80,7 @@ function aiw_register_projects() {
     'label'               => __( 'project', 'properbear' ),
     'description'         => __( 'Post Type Description', 'properbear' ),
     'labels'              => $labels,
-    'supports'            => array( 'title', ),
+    'supports'            => array( 'title', 'editor'),
     'taxonomies'          => array( 'category' ),
     'hierarchical'        => false,
     'public'              => true,
@@ -102,5 +102,46 @@ function aiw_register_projects() {
 
 // Hook into the 'init' action
 add_action( 'init', 'aiw_register_projects', 0 );
+
+
+// Register Artforms Taxonomy
+function aiw_register_artforms() {
+
+    $labels = array(
+        'name'                       => _x( 'Art Forms', 'Taxonomy General Name', 'properbear' ),
+        'singular_name'              => _x( 'Art Form', 'Taxonomy Singular Name', 'properbear' ),
+        'menu_name'                  => __( 'Artforms', 'properbear' ),
+        'all_items'                  => __( 'All Artforms', 'properbear' ),
+        'parent_item'                => __( '', 'properbear' ),
+        'parent_item_colon'          => __( '', 'properbear' ),
+        'new_item_name'              => __( 'New Artform Name', 'properbear' ),
+        'add_new_item'               => __( 'Add New Artform', 'properbear' ),
+        'edit_item'                  => __( 'Edit Artform', 'properbear' ),
+        'update_item'                => __( 'Update Artform', 'properbear' ),
+        'view_item'                  => __( 'View Artform', 'properbear' ),
+        'separate_items_with_commas' => __( 'Separate items with commas', 'properbear' ),
+        'add_or_remove_items'        => __( 'Add or remove items', 'properbear' ),
+        'choose_from_most_used'      => __( 'Choose from the most used', 'properbear' ),
+        'popular_items'              => __( 'Popular Artforms', 'properbear' ),
+        'search_items'               => __( 'Search Artforms', 'properbear' ),
+        'not_found'                  => __( 'Not Found', 'properbear' ),
+        'no_terms'                   => __( 'No items', 'properbear' ),
+        'items_list'                 => __( 'Items list', 'properbear' ),
+        'items_list_navigation'      => __( 'Items list navigation', 'properbear' ),
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => true,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+    );
+    register_taxonomy( 'artform', array( 'project' ), $args );
+
+}
+add_action( 'init', 'aiw_register_artforms', 0 );
+
 
  ?>
