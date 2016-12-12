@@ -110,6 +110,25 @@
             "step": ""
         },
         {
+            "key": "field_58492e0d34fc3",
+            "label": "Project postcode",
+            "name": "project_postcode",
+            "type": "text",
+            "instructions": "The postcode of the project location.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5830d509e2726",
             "label": "Cohort or Individual scores?",
             "name": "score_souce",
@@ -135,10 +154,10 @@
         },
         {
             "key": "field_5832f0c6ce524",
-            "label": "Lower Age Limit",
-            "name": "age_lower",
+            "label": "Cohort Youngest",
+            "name": "cohort_age_lower",
             "type": "number",
-            "instructions": "",
+            "instructions": "The age of the youngest participant",
             "required": 0,
             "conditional_logic": [
                 [
@@ -150,7 +169,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "33.33%",
                 "class": "",
                 "id": ""
             },
@@ -164,10 +183,10 @@
         },
         {
             "key": "field_5832f0e4ce525",
-            "label": "Upper Age Limit",
-            "name": "age_higher",
+            "label": "Cohort Eldest",
+            "name": "cohort_age_higher",
             "type": "number",
-            "instructions": "",
+            "instructions": "The age of the eldest participant",
             "required": 0,
             "conditional_logic": [
                 [
@@ -179,7 +198,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "33.33",
                 "class": "",
                 "id": ""
             },
@@ -193,10 +212,10 @@
         },
         {
             "key": "field_5832f1d6ce527",
-            "label": "Participants",
+            "label": "Number of participants",
             "name": "participants_number",
             "type": "number",
-            "instructions": "",
+            "instructions": "How many individuals participated in the project?",
             "required": 0,
             "conditional_logic": [
                 [
@@ -208,7 +227,7 @@
                 ]
             ],
             "wrapper": {
-                "width": "",
+                "width": "33.33",
                 "class": "",
                 "id": ""
             },
@@ -461,5 +480,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479733781
+    "modified": 1481191110
 }
