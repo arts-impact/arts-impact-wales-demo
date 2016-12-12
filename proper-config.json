@@ -10,25 +10,21 @@
   "migrateDbServers": [],
   "build": {
     "source": "themes/arts-impact",
-    "bower": {
-      "installDest": "bower_components",
-      "cssDestName": "thirdparty.css",
-      "cssDestDir": "_/css",
-      "cssMinDestName": "thirdparty.min.css",
-      "cssMinDestDir": "_/css",
-      "jsDestName": "thirdparty.js",
-      "jsDestDir": "_/js",
-      "jsMinDestName": "thirdparty.min.js",
-      "jsMinDestDir": "_/js"
-    },
+    "buildTool": "webpack",
     "svg": {
       "srcDir": "_/svg/src",
       "destName": "symbols.svg",
-      "destDir": "_/svg"
+      "destDir": "_/svg",
+      "svgDocumentSettings": {
+        "xmlDeclaration": true,
+        "namespaceIDs": false,
+        "doctypeDeclaration": true
+      }
     },
     "js": {
       "srcDir": "_/js/src",
-      "destName": "themefunctions.js",
+      "entrypoint": "index.js",
+      "destName": "bundle.js",
       "destDir": "_/js"
     },
     "sass": {
