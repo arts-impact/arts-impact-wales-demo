@@ -73,6 +73,25 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_585271e7bf275",
+            "label": "Postcode",
+            "name": "postcode",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -92,5 +111,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479512353
+    "modified": 1481751080
 }
