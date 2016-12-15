@@ -92,7 +92,7 @@
             "key": "field_5832f183ce526",
             "label": "Project Cost",
             "name": "cost",
-            "type": "number",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -101,13 +101,20 @@
                 "class": "",
                 "id": ""
             },
+            "choices": {
+                "0-100": "0-100",
+                "100-250": "100-250",
+                "250-500": "250-500",
+                "1000-3000": "1000-3000",
+                "3000-5000": "3000-5000",
+                "5000+": "5000+"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "layout": "vertical",
+            "return_format": "value"
         },
         {
             "key": "field_58492e0d34fc3",
@@ -480,5 +487,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1481191110
+    "modified": 1481802490
 }
