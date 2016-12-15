@@ -304,6 +304,64 @@
             "step": ""
         },
         {
+            "key": "field_58529a7ac6ad7",
+            "label": "Gender split \u2013 % male",
+            "name": "gender_split_\u2013_%_male",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5830d509e2726",
+                        "operator": "==",
+                        "value": "cohort"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_58529a87c6ad8",
+            "label": "Gender split \u2013 % other",
+            "name": "gender_split_\u2013_%_other",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5830d509e2726",
+                        "operator": "==",
+                        "value": "cohort"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_5832f1d6ce527",
             "label": "Number of participants",
             "name": "participants_number",
@@ -573,5 +631,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1481807679
+    "modified": 1481808678
 }
