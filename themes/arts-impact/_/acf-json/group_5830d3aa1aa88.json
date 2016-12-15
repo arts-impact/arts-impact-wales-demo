@@ -117,6 +117,60 @@
             "return_format": "value"
         },
         {
+            "key": "field_58529e6ecf83d",
+            "label": "Duration of project",
+            "name": "duration_of_project",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "A day or less": "A day or less",
+                "Between a day and a week": "Between a day and a week",
+                "More than a week, less than a month": "More than a week, less than a month",
+                "More than a month, less than three months": "More than a month, less than three months",
+                "Between three months and one year": "Between three months and one year",
+                "More than a year": "More than a year"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5852a0736b302",
+            "label": "Partner Organisations",
+            "name": "partner_organisations",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "organisation"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
             "key": "field_58492e0d34fc3",
             "label": "Primary",
             "name": "primary_postcode",
@@ -614,35 +668,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "key": "field_58529e6ecf83d",
-            "label": "Duration of project",
-            "name": "duration_of_project",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "A day or less": "A day or less",
-                "Between a day and a week": "Between a day and a week",
-                "More than a week, less than a month": "More than a week, less than a month",
-                "More than a month, less than three months": "More than a month, less than three months",
-                "Between three months and one year": "Between three months and one year",
-                "More than a year": "More than a year"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
         }
     ],
     "location": [
@@ -662,5 +687,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1481809800
+    "modified": 1481810123
 }
