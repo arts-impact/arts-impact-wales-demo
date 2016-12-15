@@ -118,10 +118,67 @@
         },
         {
             "key": "field_58492e0d34fc3",
-            "label": "Project postcode",
-            "name": "project_postcode",
+            "label": "Primary",
+            "name": "primary_postcode",
             "type": "text",
             "instructions": "The postcode of the project location.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5852842f26713",
+            "label": "Secondary postcode",
+            "name": "secondary_postcode",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_585284d226715",
+            "label": "Location is private \u2013 opt out of postcode",
+            "name": "location_is_private_\u2013_opt_out_of_postcode",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5852843626714",
+            "label": "Tertiary postcode",
+            "name": "tertiary_postcode",
+            "type": "text",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -487,5 +544,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1481802490
+    "modified": 1481803010
 }
