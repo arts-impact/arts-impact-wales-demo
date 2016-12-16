@@ -16,7 +16,6 @@ build:
       - . /build/envvars.sh
       - npm run build
       - cp -r /source/* $DRONE_ROOT
-      
 deploy:
   rsync:
     user: root
